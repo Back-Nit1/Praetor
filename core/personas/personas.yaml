@@ -1,0 +1,56 @@
+version: 1
+personas:
+  - id: opportunist
+    name: Opportunist
+    goal_domain: fraud
+    skill: 1
+    budget_steps: 3
+    patience: 0
+    laziness: 0.85
+    attention_k: 1
+    tools: [search_engine]
+    motive: Find an easy, low-effort account exposure.
+
+  - id: id_theft_reseller
+    name: Identity-theft reseller
+    goal_domain: identity
+    skill: 3
+    budget_steps: 4
+    patience: 2
+    laziness: 0.35
+    attention_k: 3
+    tools: [search_engine, public_records]
+    motive: Correlate public identity attributes for resale risk simulation.
+
+  - id: targeted_fraudster
+    name: Targeted fraudster
+    goal_domain: financial
+    skill: 4
+    budget_steps: 7
+    patience: 4
+    laziness: 0.15
+    attention_k: 4
+    tools: [search_engine, public_records, recovery_analysis]
+    motive: Model a persistent path from public evidence to a financial asset.
+
+  - id: personal_threat
+    name: Personal threat
+    goal_domain: physical
+    skill: 2
+    budget_steps: 4
+    patience: 2
+    laziness: 0.25
+    attention_k: 3
+    tools: [search_engine, public_records]
+    motive: Identify physical-safety exposure so defensive fixes can be prioritized.
+
+  - id: insider
+    name: Insider
+    goal_domain: professional
+    skill: 3
+    budget_steps: 4
+    patience: 3
+    laziness: 0.15
+    attention_k: 5
+    tools: [known_public_context, search_engine]
+    motive: Prioritize already-known public workplace context without adding private facts.
