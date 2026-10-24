@@ -1,0 +1,7 @@
+[
+  {"id": "casey-pub-01", "kind": "name", "value": "Casey Placeholder", "source_url": "https://records.example.org/parcel/casey-placeholder", "source_kind": "public_record", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "casey-pub-02", "kind": "address", "value": "300 Example Road, Capital City", "source_url": "https://records.example.org/parcel/casey-placeholder", "source_kind": "public_record", "confidence": 0.85, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "casey-pub-03", "kind": "email", "value": "casey.placeholder@example.org", "source_url": "https://blog.example.org/about-casey", "source_kind": "search", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "casey-pub-04", "kind": "employer", "value": "Placeholder Labs (fictional)", "source_url": "https://blog.example.org/about-casey", "source_kind": "search", "confidence": 0.5, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "casey-pub-05", "kind": "account", "value": "email", "source_url": null, "source_kind": "search", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"}
+]
