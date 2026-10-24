@@ -4,7 +4,7 @@ Done (M2): scripts/check_models.py lists live NVIDIA IDs from verbose endpoint m
 Done (M2): scripts/smoke_models.py makes one structured NANO and one SUPER call; metadata-only report shows each call's ledger status, timing, usage, and sanitized errors.
 Tests: test-fast 71 passed / 2 network deselected; lint passed. Live tests skip without required configuration.
 Notes: no prompt text, response text, prompt identifier, or key is emitted by validation reports. No model defaults changed without live evidence.
-In progress: commit and milestone merge.
+In progress: milestone merge blocked by unrelated uncommitted changes in the main worktree.
 Next: run check_models then smoke when credentials and selected MODEL_NANO/MODEL_SUPER are configured.
 Contract requests: none.
-Blockers: NEBIUS_API_KEY is absent, so live model IDs, recommendations, structured-output support, and endpoint calls remain unvalidated.
+Blockers: NEBIUS_API_KEY is absent, so live behavior remains unvalidated; merge awaits owner resolution of the dirty main worktree.
