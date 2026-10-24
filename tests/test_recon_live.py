@@ -23,8 +23,8 @@ SEEDS = Seeds(name="Pat Example", city="Exampleton", emails=[EMAIL], handles=["p
 
 @pytest.fixture(autouse=True)
 def _env(tmp_path, monkeypatch):
-    monkeypatch.setenv("NEMESIS_LEDGER_DB", str(tmp_path / "ledger.sqlite"))
-    monkeypatch.setenv("NEMESIS_CACHE", "0")
+    monkeypatch.setenv("PRAETOR_LEDGER_DB", str(tmp_path / "ledger.sqlite"))
+    monkeypatch.setenv("PRAETOR_CACHE", "0")
     for k in ("NEMESIS_DEMO_MODE", "PRAETOR_DEMO_MODE"):
         monkeypatch.delenv(k, raising=False)
 
