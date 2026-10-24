@@ -1,0 +1,6 @@
+[
+  {"round": 0, "paths_remaining": 3, "by_persona": {"targeted_fraudster": 1, "personal_threat": 1, "insider": 1}, "fixes_applied": [], "unlocked_techniques": []},
+  {"round": 1, "paths_remaining": 1, "by_persona": {"insider": 1}, "fixes_applied": ["optout:broker_peoplesearch", "passkey:acct_email"], "unlocked_techniques": []},
+  {"round": 2, "paths_remaining": 2, "by_persona": {"insider": 1, "targeted_fraudster": 1}, "fixes_applied": [], "unlocked_techniques": ["breach_email_recovery"]},
+  {"round": 3, "paths_remaining": 1, "by_persona": {"targeted_fraudster": 1}, "fixes_applied": ["privacy_setting:acct_social", "alias_swap:email_personal"], "unlocked_techniques": []}
+]

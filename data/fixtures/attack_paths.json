@@ -1,0 +1,36 @@
+[
+  {
+    "id": "p-fin-1", "persona_id": "targeted_fraudster", "domain": "financial",
+    "steps": [
+      {"edge_ids": ["person->broker_peoplesearch", "broker_peoplesearch->phone"], "action": "Look up broker listing, note phone", "success_prob": 0.95, "minutes": 5, "cost_usd": 0},
+      {"edge_ids": ["phone->acct_email"], "action": "SMS-based webmail recovery", "success_prob": 0.35, "minutes": 30, "cost_usd": 20},
+      {"edge_ids": ["acct_email->acct_bank", "acct_bank->asset_funds"], "action": "Bank password reset via webmail", "success_prob": 0.6, "minutes": 15, "cost_usd": 0}
+    ],
+    "total_minutes": 50, "total_cost_usd": 20, "success_prob": 0.2,
+    "loss_low": 800, "loss_high": 6500, "severity": 4,
+    "fixable_elements": ["optout:broker_peoplesearch", "passkey:acct_email", "recovery_change:acct_email", "recovery_change:acct_bank", "passkey:acct_bank"],
+    "narrative": "A broker listing exposes the phone number tied to webmail recovery; webmail in turn recovers the bank login.",
+    "pretext_template": null
+  },
+  {
+    "id": "p-phys-1", "persona_id": "personal_threat", "domain": "physical",
+    "steps": [
+      {"edge_ids": ["person->broker_peoplesearch", "broker_peoplesearch->address", "address->asset_location"], "action": "Home address exposed by broker listing", "success_prob": 0.9, "minutes": 5, "cost_usd": 0}
+    ],
+    "total_minutes": 5, "total_cost_usd": 0, "success_prob": 0.9,
+    "loss_low": null, "loss_high": null, "severity": 3,
+    "fixable_elements": ["optout:broker_peoplesearch"],
+    "narrative": null, "pretext_template": null
+  },
+  {
+    "id": "p-fraud-1", "persona_id": "insider", "domain": "fraud",
+    "steps": [
+      {"edge_ids": ["person->acct_social", "acct_social->employer"], "action": "Employer visible on social profile", "success_prob": 0.9, "minutes": 3, "cost_usd": 0}
+    ],
+    "total_minutes": 3, "total_cost_usd": 0, "success_prob": 0.5,
+    "loss_low": null, "loss_high": null, "severity": 2,
+    "fixable_elements": ["privacy_setting:acct_social"],
+    "narrative": "Workplace details enable a believable IT-support pretext.",
+    "pretext_template": "[SIMULATION — never sent] Hi {{FIRST_NAME}}, this is {{FAKE_NAME}} from {{EMPLOYER}} IT. We need you to confirm {{REQUEST}} before {{DEADLINE}}."
+  }
+]

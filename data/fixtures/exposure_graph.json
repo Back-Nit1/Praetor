@@ -1,0 +1,35 @@
+{
+  "id": "g-pat-example-01",
+  "persona_id": "pat-example-01",
+  "built_at": "2026-10-24T12:00:00Z",
+  "nodes": [
+    {"id": "person", "type": "person", "label": "Pat Example", "attrs": {"synthetic": true}, "public": true},
+    {"id": "broker_peoplesearch", "type": "broker", "label": "PeopleSearch (fictional broker)", "attrs": {"url": "https://peoplesearch.example.com/pat-example"}, "public": true},
+    {"id": "breach_2023", "type": "event", "label": "2023 forum breach (fictional)", "attrs": {"year": 2023}, "public": true},
+    {"id": "email_personal", "type": "identifier", "label": "pat.example@example.com", "attrs": {"kind": "email"}, "public": true},
+    {"id": "phone", "type": "identifier", "label": "555-0142", "attrs": {"kind": "phone"}, "public": true},
+    {"id": "address", "type": "identifier", "label": "100 Example Street, Springfield", "attrs": {"kind": "address"}, "public": true},
+    {"id": "employer", "type": "identifier", "label": "Example Corp", "attrs": {"kind": "employer"}, "public": true},
+    {"id": "relative_1", "type": "relative_token", "label": "relative_1", "attrs": {}, "public": true},
+    {"id": "acct_social", "type": "account", "label": "Social profile", "attrs": {}, "public": true},
+    {"id": "acct_email", "type": "account", "label": "Webmail account", "attrs": {}, "public": false},
+    {"id": "acct_bank", "type": "account", "label": "Bank account", "attrs": {}, "public": false},
+    {"id": "asset_funds", "type": "asset", "label": "Checking balance", "attrs": {}, "public": false},
+    {"id": "asset_location", "type": "asset", "label": "Home location", "attrs": {}, "public": false}
+  ],
+  "edges": [
+    {"src": "person", "dst": "broker_peoplesearch", "rel": "listed_on", "effort": 0.05, "fixable_by": ["optout:broker_peoplesearch"]},
+    {"src": "person", "dst": "acct_social", "rel": "owns", "effort": 0.1, "fixable_by": []},
+    {"src": "person", "dst": "breach_2023", "rel": "related_to", "effort": 0.3, "fixable_by": []},
+    {"src": "broker_peoplesearch", "dst": "address", "rel": "reveals", "effort": 0.1, "fixable_by": ["optout:broker_peoplesearch"]},
+    {"src": "broker_peoplesearch", "dst": "phone", "rel": "reveals", "effort": 0.1, "fixable_by": ["optout:broker_peoplesearch"]},
+    {"src": "broker_peoplesearch", "dst": "relative_1", "rel": "reveals", "effort": 0.1, "fixable_by": ["optout:broker_peoplesearch"]},
+    {"src": "breach_2023", "dst": "email_personal", "rel": "reveals", "effort": 0.2, "fixable_by": ["alias_swap:email_personal"]},
+    {"src": "acct_social", "dst": "employer", "rel": "reveals", "effort": 0.1, "fixable_by": ["privacy_setting:acct_social"]},
+    {"src": "phone", "dst": "acct_email", "rel": "verifies", "effort": 0.5, "fixable_by": ["passkey:acct_email", "recovery_change:acct_email"]},
+    {"src": "email_personal", "dst": "acct_email", "rel": "recovers", "effort": 0.6, "fixable_by": ["alias_swap:email_personal"]},
+    {"src": "acct_email", "dst": "acct_bank", "rel": "recovers", "effort": 0.3, "fixable_by": ["recovery_change:acct_bank"]},
+    {"src": "acct_bank", "dst": "asset_funds", "rel": "owns", "effort": 0.4, "fixable_by": ["passkey:acct_bank"]},
+    {"src": "address", "dst": "asset_location", "rel": "reveals", "effort": 0.1, "fixable_by": ["optout:broker_peoplesearch"]}
+  ]
+}
