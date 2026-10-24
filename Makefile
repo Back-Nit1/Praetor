@@ -1,6 +1,6 @@
 # Praetor. `make install` once, then the rest. Stubs print TODO(owner) until that terminal wires them.
 PY ?= .venv/bin/python
-.PHONY: install dev test test-fast e2e bench build up lint
+.PHONY: install dev test test-fast e2e smoke-live bench build up lint
 
 install: $(PY)
 $(PY):  # auto-built on first use, so fresh worktrees just work
@@ -22,6 +22,9 @@ lint: $(PY)
 
 e2e: $(PY)  ## offline gate: build_twin -> personas -> attacks -> score on pat-example-01
 	$(PY) scripts/e2e.py
+
+smoke-live: $(PY)  ## optional, spends quota: make smoke-live ARGS='--attest --name "Your Name"'
+	$(PY) scripts/live_smoke.py $(ARGS)
 
 bench:  ## numbers for README (T4/T8)
 	@echo "TODO(T4): bench"
