@@ -62,7 +62,7 @@ def test_no_recommendation_without_returned_ranking_metadata():
 
 
 def test_smoke_calls_are_visible_in_ledger_without_capturing_outputs(tmp_path, monkeypatch):
-    monkeypatch.setenv("NEMESIS_LEDGER_DB", str(tmp_path / "ledger.sqlite"))
+    monkeypatch.setenv("PRAETOR_LEDGER_DB", str(tmp_path / "ledger.sqlite"))
     report = run_smoke(FakeSDK(), {"NANO": "nvidia/example-nano", "SUPER": "nvidia/example-super"})
 
     assert report["errors"] == []
