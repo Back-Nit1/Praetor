@@ -1,0 +1,29 @@
+version: 1
+techniques:
+  - id: public_lookup
+    unlock_round: 0
+    relations: [listed_on, related_to]
+    base_minutes: 2.0
+    base_cost_usd: 0.0
+    base_success: 0.96
+
+  - id: public_correlation
+    unlock_round: 0
+    relations: [reveals, derived_from]
+    base_minutes: 3.0
+    base_cost_usd: 0.0
+    base_success: 0.93
+
+  - id: ownership_mapping
+    unlock_round: 0
+    relations: [owns]
+    base_minutes: 4.0
+    base_cost_usd: 0.0
+    base_success: 0.90
+
+  - id: recovery_mapping
+    unlock_round: 1
+    relations: [recovers, verifies]
+    base_minutes: 8.0
+    base_cost_usd: 2.0
+    base_success: 0.78
