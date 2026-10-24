@@ -1,0 +1,22 @@
+{
+ "id": "pat-example-01",
+ "name": "Pat Example",
+ "findable": [
+  {"id": "pat-tru-01", "kind": "name", "value": "Pat Example", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-02", "kind": "listing", "value": "PeopleSearch (fictional broker)", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-03", "kind": "address", "value": "100 Example Street, Springfield", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-04", "kind": "phone", "value": "555-0142", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.85, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-05", "kind": "relative_token", "value": "relative_1", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-06", "kind": "breach", "value": "2023 forum breach (fictional)", "source_url": "https://forum.example.org/breach-2023", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-07", "kind": "email", "value": "pat.example@example.com", "source_url": "https://forum.example.org/breach-2023", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-08", "kind": "account", "value": "social", "source_url": "https://social.example.com/patex", "source_kind": "social", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-09", "kind": "employer", "value": "Example Corp", "source_url": "https://social.example.com/patex", "source_kind": "social", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-10", "kind": "account", "value": "email", "source_url": null, "source_kind": "search", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-tru-11", "kind": "account", "value": "bank", "source_url": null, "source_kind": "search", "confidence": 0.5, "found_at": "2026-10-01T00:00:00Z"}
+],
+ "private": [
+  {"id": "pat-prv-01", "kind": "phone", "value": "555-0177", "source_url": null, "source_kind": "broker", "confidence": 1.0, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-prv-02", "kind": "email", "value": "pat.private@example.org", "source_url": null, "source_kind": "breach", "confidence": 1.0, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-prv-03", "kind": "account", "value": "brokerage", "source_url": null, "source_kind": "search", "confidence": 1.0, "found_at": "2026-10-01T00:00:00Z"}
+]
+}

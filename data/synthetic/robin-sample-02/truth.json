@@ -1,0 +1,30 @@
+{
+ "id": "robin-sample-02",
+ "name": "Robin Sample",
+ "findable": [
+  {"id": "robin-tru-01", "kind": "name", "value": "Robin Sample", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-02", "kind": "name", "value": "Robin Sample", "source_url": "https://findfolks.example.com/r-sample", "source_kind": "broker", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-03", "kind": "listing", "value": "PeopleSearch (fictional broker)", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-04", "kind": "listing", "value": "FindFolks (fictional broker)", "source_url": "https://findfolks.example.com/r-sample", "source_kind": "broker", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-05", "kind": "address", "value": "200 Example Avenue, Shelbyville", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-06", "kind": "address", "value": "200 Example Ave, Shelbyville", "source_url": "https://findfolks.example.com/r-sample", "source_kind": "broker", "confidence": 0.85, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-07", "kind": "phone", "value": "555-0155", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.85, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-08", "kind": "phone", "value": "555-0155", "source_url": "https://retailer.example.org/breach-2021", "source_kind": "breach", "confidence": 0.7, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-09", "kind": "relative_token", "value": "relative_1", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-10", "kind": "relative_token", "value": "relative_2", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.55, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-11", "kind": "employer", "value": "Sample Logistics (fictional)", "source_url": "https://peoplesearch.example.com/robin-sample", "source_kind": "broker", "confidence": 0.7, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-12", "kind": "employer", "value": "Sample Logistics (fictional)", "source_url": "https://social.example.com/robinsample", "source_kind": "social", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-13", "kind": "breach", "value": "2021 retailer breach (fictional)", "source_url": "https://retailer.example.org/breach-2021", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-14", "kind": "email", "value": "robin.sample@example.com", "source_url": "https://retailer.example.org/breach-2021", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-15", "kind": "account", "value": "social", "source_url": "https://social.example.com/robinsample", "source_kind": "social", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-16", "kind": "handle", "value": "@robin_sample", "source_url": "https://social.example.com/robinsample", "source_kind": "social", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-17", "kind": "photo_meta", "value": "geotagged photo, 2026", "source_url": "https://social.example.com/robinsample", "source_kind": "social", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-18", "kind": "account", "value": "email", "source_url": null, "source_kind": "search", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-19", "kind": "account", "value": "bank", "source_url": null, "source_kind": "search", "confidence": 0.5, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-tru-20", "kind": "account", "value": "payments", "source_url": null, "source_kind": "search", "confidence": 0.4, "found_at": "2026-10-01T00:00:00Z"}
+],
+ "private": [
+  {"id": "robin-prv-01", "kind": "phone", "value": "555-0121", "source_url": null, "source_kind": "broker", "confidence": 1.0, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "robin-prv-02", "kind": "account", "value": "brokerage", "source_url": null, "source_kind": "search", "confidence": 1.0, "found_at": "2026-10-01T00:00:00Z"}
+]
+}

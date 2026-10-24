@@ -1,0 +1,15 @@
+[
+  {"id": "pat-pub-01", "kind": "name", "value": "Pat Example", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-02", "kind": "listing", "value": "PeopleSearch (fictional broker)", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.95, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-03", "kind": "address", "value": "100 Example Street, Springfield", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-04", "kind": "phone", "value": "555-0142", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.85, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-05", "kind": "phone", "value": "555 0142", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.7, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-06", "kind": "relative_token", "value": "Jordan Example", "source_url": "https://peoplesearch.example.com/pat-example", "source_kind": "broker", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-07", "kind": "breach", "value": "2023 forum breach (fictional)", "source_url": "https://forum.example.org/breach-2023", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-08", "kind": "email", "value": "pat.example@example.com", "source_url": "https://forum.example.org/breach-2023", "source_kind": "breach", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-09", "kind": "email", "value": "Pat.Example@example.com", "source_url": "https://forum.example.org/breach-2023", "source_kind": "breach", "confidence": 0.7, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-10", "kind": "account", "value": "social", "source_url": "https://social.example.com/patex", "source_kind": "social", "confidence": 0.9, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-11", "kind": "employer", "value": "Example Corp", "source_url": "https://social.example.com/patex", "source_kind": "social", "confidence": 0.8, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-12", "kind": "account", "value": "email", "source_url": null, "source_kind": "search", "confidence": 0.6, "found_at": "2026-10-01T00:00:00Z"},
+  {"id": "pat-pub-13", "kind": "account", "value": "bank", "source_url": null, "source_kind": "search", "confidence": 0.5, "found_at": "2026-10-01T00:00:00Z"}
+]
