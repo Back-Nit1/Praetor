@@ -55,7 +55,7 @@ Domains: `financial, identity, fraud, physical, social, surveillance, profession
 | core/llm | T1 | `chat(tier, messages, purpose, json_schema=None) -> str\|dict`, `BudgetExceeded`; `redact(text) -> (text, map)`, `rehydrate(text, map)` | ledger |
 | core/ledger | T1 | `record(service, purpose, payload_bytes, redactions) -> LedgerEntry`, `verify_chain() -> bool`, `summary() -> dict`, `entries() -> list[LedgerEntry]` | — |
 | core/recon | T2 | `search(query, attest) -> list[dict]` (Tavily shape), `extract(snippets) -> list[Fact]` | llm (NANO), ledger |
-| core/graph, core/twin.py | T2 | `build_graph(facts) -> ExposureGraph`; `build_twin(persona_id=None, seeds=None, attest=False) -> ExposureGraph`; `twin_gap(truth, twin) -> float` | recon |
+| core/graph, core/twin.py | T2 | `build_graph(facts, persona_id="self") -> ExposureGraph`; `build_twin(persona_id=None, seeds=None, attest=False) -> ExposureGraph`; `twin_gap(truth, twin) -> float`; `core.recon.synthetic.list_personas() -> [{id, name}]` | recon |
 | core/personas | T3 | `load_personas() -> list[Persona]`, tech tree `techniques_for(round) -> list[str]` | — |
 | core/attack | T3 | `run_attacks(graph, personas, seed=0, round=0) -> list[AttackPath]` | llm (ULTRA/SUPER, narration only) |
 | core/risk | T3 | `score(graph, paths) -> list[RiskFinding]` | — |
@@ -67,6 +67,10 @@ Domains: `financial, identity, fraud, physical, social, surveillance, profession
 | agent/ | T7 | Hermes skills over HTTP | apps/api only |
 
 Rule: core modules never import apps; `apps/web` and `agent/` talk only HTTP.
+
+### build_twin errors (decided at gate 1)
+`PermissionError` (demo mode + seeds → API 403) · `ValueError` (no attest / unknown persona → 4xx) · `NotImplementedError`
+(live recon not built → 501). Fact-derived `Node.attrs` carry normalized `kind`/`key`; `twin_gap` relies on them.
 
 ## Guardrails encoded in schemas
 No credential fields anywhere (extra fields rejected) · live twin needs `attest=True` · pretext templates must carry

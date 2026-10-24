@@ -20,8 +20,8 @@ test-fast: $(PY)  ## <30s, no network
 lint: $(PY)
 	$(PY) -m ruff check core apps tests
 
-e2e:  ## synthetic persona end-to-end, cached (T0 wires once T2-T4 merge)
-	@echo "TODO(T0): e2e on pat-example-01"
+e2e: $(PY)  ## offline gate: build_twin -> personas -> attacks -> score on pat-example-01
+	$(PY) scripts/e2e.py
 
 bench:  ## numbers for README (T4/T8)
 	@echo "TODO(T4): bench"

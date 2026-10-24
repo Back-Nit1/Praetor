@@ -16,3 +16,6 @@ __pycache__/
 graphify-out/cache
 .DS_Store
 plan.md
+
+# session transcripts pasted into repo root
+/[0-9].md
