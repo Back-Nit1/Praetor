@@ -2,7 +2,8 @@
 PY ?= .venv/bin/python
 .PHONY: install dev test test-fast e2e bench build up lint
 
-install:
+install: $(PY)
+$(PY):  # auto-built on first use, so fresh worktrees just work
 	uv venv -p 3.11 .venv
 	uv pip install -p $(PY) -e ".[dev]"
 
@@ -10,13 +11,13 @@ dev:  ## API with reload (T5) — UI dev server lives in apps/web (T6)
 	@if [ -f apps/api/main.py ]; then $(PY) -m uvicorn apps.api.main:app --reload --port 8000; \
 	else echo "TODO(T5): apps/api/main.py not built yet"; fi
 
-test:
+test: $(PY)
 	$(PY) -m pytest -q
 
-test-fast:  ## <30s, no network
+test-fast: $(PY)  ## <30s, no network
 	$(PY) -m pytest -q -m "not network and not slow"
 
-lint:
+lint: $(PY)
 	$(PY) -m ruff check core apps tests
 
 e2e:  ## synthetic persona end-to-end, cached (T0 wires once T2-T4 merge)
