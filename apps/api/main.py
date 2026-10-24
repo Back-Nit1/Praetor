@@ -1,4 +1,4 @@
-"""Nemesis HTTP API."""
+"""Praetor HTTP API."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
-from apps.api.adapters import CoreServiceAdapter, FixtureServiceAdapter, NemesisServiceAdapter, UnknownPersonaError
+from apps.api.adapters import CoreServiceAdapter, FixtureServiceAdapter, PraetorServiceAdapter, UnknownPersonaError
 from apps.api.repository import SqliteApiRepository
 from core.schemas import Event, GraphRef, LeagueRunRequest, RunRef, TwinRequest
 
@@ -25,19 +25,19 @@ ROOT = Path(__file__).resolve().parents[2]
 @dataclass(frozen=True)
 class ApiSettings:
     demo_mode: bool = True
-    database_path: str = str(ROOT / "data" / "nemesis-api.sqlite3")
+    database_path: str = str(ROOT / "data" / "praetor-api.sqlite3")
     fixture_dir: str = str(ROOT / "data" / "fixtures")
     adapter: str = "fixture"
     cors_origins: tuple[str, ...] = ()
 
     @classmethod
     def from_env(cls) -> ApiSettings:
-        origins = tuple(origin.strip() for origin in os.getenv("NEMESIS_CORS_ORIGINS", "").split(",") if origin.strip())
+        origins = tuple(origin.strip() for origin in os.getenv("PRAETOR_CORS_ORIGINS", "").split(",") if origin.strip())
         return cls(
-            demo_mode=os.getenv("NEMESIS_DEMO_MODE", "1").lower() in {"1", "true", "yes", "on"},
-            database_path=os.getenv("NEMESIS_API_DB_PATH", cls.database_path),
-            fixture_dir=os.getenv("NEMESIS_FIXTURE_DIR", cls.fixture_dir),
-            adapter=os.getenv("NEMESIS_API_ADAPTER", "fixture").lower(),
+            demo_mode=os.getenv("PRAETOR_DEMO_MODE", "1").lower() in {"1", "true", "yes", "on"},
+            database_path=os.getenv("PRAETOR_API_DB_PATH", cls.database_path),
+            fixture_dir=os.getenv("PRAETOR_FIXTURE_DIR", cls.fixture_dir),
+            adapter=os.getenv("PRAETOR_API_ADAPTER", "fixture").lower(),
             cors_origins=origins,
         )
 
@@ -61,7 +61,7 @@ class StreamRegistry:
         return sum(self._active.values())
 
 
-def _build_adapter(settings: ApiSettings) -> NemesisServiceAdapter:
+def _build_adapter(settings: ApiSettings) -> PraetorServiceAdapter:
     if settings.adapter == "fixture":
         return FixtureServiceAdapter(settings.fixture_dir)
     if settings.adapter == "core":
@@ -84,14 +84,14 @@ def _sse(event: Event) -> str:
 
 def create_app(
     settings: ApiSettings | None = None,
-    service: NemesisServiceAdapter | None = None,
+    service: PraetorServiceAdapter | None = None,
     repository: SqliteApiRepository | None = None,
 ) -> FastAPI:
     settings = settings or ApiSettings.from_env()
     service = service or _build_adapter(settings)
     repository = repository or SqliteApiRepository(settings.database_path)
     streams = StreamRegistry()
-    app = FastAPI(title="Nemesis API")
+    app = FastAPI(title="Praetor API")
     app.state.settings = settings
     app.state.service = service
     app.state.repository = repository

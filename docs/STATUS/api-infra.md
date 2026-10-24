@@ -7,7 +7,7 @@
 - None.
 
 ## Next
-- Replace `NEMESIS_API_ADAPTER=fixture` with `core` after core modules merge.
+- Replace `PRAETOR_API_ADAPTER=fixture` with `core` after core modules merge.
 
 ## Contract requests
 - None.

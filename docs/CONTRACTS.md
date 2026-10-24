@@ -1,4 +1,4 @@
-# Nemesis contracts
+# Praetor contracts
 
 The only thing you may assume about another module. Source of truth for types: `core/schemas.py`
 (pydantic v2, `extra="forbid"`). Only T0 edits this file and `core/schemas.py`; request changes under
@@ -45,7 +45,7 @@ Domains: `financial, identity, fraud, physical, social, surveillance, profession
 | GET | /api/ledger | — | `{entries: LedgerEntry[], verified: bool, summary}` |
 | POST | /api/watch/run | — | RunRef |
 
-`NEMESIS_DEMO_MODE=1`: `seeds` requests return 403 with a clear message. Errors: `{"detail": str}`.
+`PRAETOR_DEMO_MODE=1`: `seeds` requests return 403 with a clear message. Errors: `{"detail": str}`.
 
 ## Module ownership + call graph
 

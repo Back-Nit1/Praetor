@@ -1,4 +1,4 @@
-# Nemesis
+# Praetor
 
 Attack yourself before someone else does. A personal security agent that builds a public digital twin of you,
 runs simulated attackers against it, and finds the smallest set of fixes that stops them.

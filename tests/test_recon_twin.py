@@ -121,7 +121,7 @@ def test_live_seeds_need_attest_and_not_demo(monkeypatch):
         build_twin(persona_id="pat-example-01", seeds=seeds, attest=True)
     with pytest.raises(ValueError):
         build_twin()
-    monkeypatch.setenv("NEMESIS_DEMO_MODE", "1")
+    monkeypatch.setenv("PRAETOR_DEMO_MODE", "1")
     for attest in (True, False):
         with pytest.raises(PermissionError, match="demo"):
             build_twin(seeds=seeds, attest=attest)

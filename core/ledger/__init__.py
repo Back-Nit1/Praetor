@@ -30,8 +30,8 @@ CREATE TRIGGER IF NOT EXISTS ledger_no_delete BEFORE DELETE ON ledger
 
 
 def db_path() -> Path:
-    """Read on every call so tests can point NEMESIS_LEDGER_DB at a tmp dir."""
-    return Path(os.environ.get("NEMESIS_LEDGER_DB", "data/private/ledger.sqlite"))
+    """Read on every call so tests can point PRAETOR_LEDGER_DB at a tmp dir."""
+    return Path(os.environ.get("PRAETOR_LEDGER_DB", "data/private/ledger.sqlite"))
 
 
 def _connect() -> sqlite3.Connection:

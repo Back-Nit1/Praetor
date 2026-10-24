@@ -25,7 +25,7 @@ from core.schemas import (
 )
 
 
-class NemesisServiceAdapter(Protocol):
+class PraetorServiceAdapter(Protocol):
     def personas(self) -> list[dict[str, str]]: ...
 
     def build_twin(self, persona_id: str | None, seeds: Seeds | None, attest: bool) -> ExposureGraph: ...

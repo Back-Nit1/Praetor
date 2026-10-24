@@ -8,7 +8,7 @@ from core.schemas import ExposureGraph, Fact, TwinRequest
 
 
 def build_twin(persona_id: str | None = None, seeds=None, attest: bool = False) -> ExposureGraph:
-    if seeds is not None and os.environ.get("NEMESIS_DEMO_MODE") == "1":
+    if seeds is not None and os.environ.get("PRAETOR_DEMO_MODE") == "1":
         raise PermissionError("demo mode accepts synthetic personas only")
     req = TwinRequest(persona_id=persona_id, seeds=seeds, attest=attest)  # exactly one target; seeds need attest
     if req.seeds is not None:

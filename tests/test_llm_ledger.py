@@ -12,8 +12,8 @@ from core.llm import BudgetExceeded, Client, redact, rehydrate
 
 @pytest.fixture(autouse=True)
 def _db(tmp_path, monkeypatch):
-    monkeypatch.setenv("NEMESIS_LEDGER_DB", str(tmp_path / "sub" / "dir" / "ledger.sqlite"))  # parents auto-created
-    monkeypatch.setenv("NEMESIS_CACHE", "0")
+    monkeypatch.setenv("PRAETOR_LEDGER_DB", str(tmp_path / "sub" / "dir" / "ledger.sqlite"))  # parents auto-created
+    monkeypatch.setenv("PRAETOR_CACHE", "0")
 
 
 class FakeSDK:

@@ -1,4 +1,4 @@
-"""Nemesis shared contracts (plan.md §5). Owned by T0 — request changes in docs/STATUS/<you>.md.
+"""Praetor shared contracts (plan.md §5). Owned by T0 — request changes in docs/STATUS/<you>.md.
 
 Guardrail: no credential fields (password, SSN, card, ID numbers) may ever be added here.
 """

@@ -16,7 +16,7 @@ WT="$(git worktree list --porcelain | awk -v b="refs/heads/$BR" '/^worktree /{p=
 [ -n "$WT" ] || { echo "No worktree found for $BR" >&2; exit 1; }
 
 # one merge at a time (mkdir lock works on macOS + Linux)
-LOCK="$(cd "$(git -C "$MAIN" rev-parse --git-common-dir)" && pwd)/nemesis-merge.lock"
+LOCK="$(git -C "$MAIN" rev-parse --path-format=absolute --git-common-dir)/praetor-merge.lock"
 i=0
 until mkdir "$LOCK" 2>/dev/null; do
   i=$((i+1)); [ "$i" -gt 60 ] && { echo "Another merge holds the lock: $LOCK" >&2; exit 3; }

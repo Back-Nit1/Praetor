@@ -42,14 +42,14 @@ class Client:
         env = os.environ.get
         self.sdk = sdk
         self.models = models or {t: env(f"MODEL_{t}", "") for t in TIERS}
-        self.ceiling = max_tokens_ceiling if max_tokens_ceiling is not None else int(env("NEMESIS_MAX_TOKENS", "2000000"))
-        self.max_usd = max_usd if max_usd is not None else float(env("NEMESIS_MAX_USD", "15"))
+        self.ceiling = max_tokens_ceiling if max_tokens_ceiling is not None else int(env("PRAETOR_MAX_TOKENS", "2000000"))
+        self.max_usd = max_usd if max_usd is not None else float(env("PRAETOR_MAX_USD", "15"))
         self.prices = prices if prices is not None else {
             t: (float(env(f"PRICE_{t}_IN_PER_MTOK")), float(env(f"PRICE_{t}_OUT_PER_MTOK")))
             for t in TIERS if env(f"PRICE_{t}_IN_PER_MTOK") and env(f"PRICE_{t}_OUT_PER_MTOK")
         }
-        if cache_dir is None and env("NEMESIS_CACHE", "1") == "1":
-            cache_dir = env("NEMESIS_CACHE_DIR", ".cache/llm")
+        if cache_dir is None and env("PRAETOR_CACHE", "1") == "1":
+            cache_dir = env("PRAETOR_CACHE_DIR", ".cache/llm")
         self.cache_dir = Path(cache_dir) if cache_dir else None
         self.max_retries, self.backoff, self.max_output_tokens, self._sleep = max_retries, backoff, max_output_tokens, sleep
         self._lock = threading.Lock()

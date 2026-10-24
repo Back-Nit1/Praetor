@@ -1,4 +1,4 @@
-# Nemesis — read this first (every terminal, every session)
+# Praetor — read this first (every terminal, every session)
 
 ## The problem
 Our lives are leaking into the open web. Data brokers sell addresses, phones, relatives and
@@ -10,7 +10,7 @@ engineering of us and our families, tracking and profiling (surveillance).
 Existing tools say "we removed 12 listings." Nobody shows you the attack you would actually face,
 or the shortest path to being safe.
 
-## What Nemesis is
+## What Praetor is
 An always-on **personal security agent** (Personal AI track).
 1. Builds a **public digital twin** of one person — only what a stranger could find online.
 2. Runs **distinct simulated attackers** (opportunist, ID-theft reseller, targeted fraudster,

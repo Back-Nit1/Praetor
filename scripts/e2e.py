@@ -42,7 +42,7 @@ def validated(graph, personas, paths, findings) -> dict:
 
 
 def main() -> int:
-    os.environ.pop("NEMESIS_API_ADAPTER", None)
+    os.environ.pop("PRAETOR_API_ADAPTER", None)
     first = validated(*flow())
     second = validated(*flow())
     digest = lambda o: hashlib.sha256(json.dumps(o, sort_keys=True).encode()).hexdigest()

@@ -1,4 +1,4 @@
-# Nemesis. `make install` once, then the rest. Stubs print TODO(owner) until that terminal wires them.
+# Praetor. `make install` once, then the rest. Stubs print TODO(owner) until that terminal wires them.
 PY ?= .venv/bin/python
 .PHONY: install dev test test-fast e2e bench build up lint
 
@@ -27,7 +27,7 @@ bench:  ## numbers for README (T4/T8)
 	@echo "TODO(T4): bench"
 
 build:  ## docker image (T5)
-	@if [ -f Dockerfile ]; then docker build -t nemesis .; else echo "TODO(T5): Dockerfile"; fi
+	@if [ -f Dockerfile ]; then docker build -t praetor .; else echo "TODO(T5): Dockerfile"; fi
 
 up:  ## run image locally (T5)
-	@if [ -f Dockerfile ]; then docker run --rm -p 8000:8000 --env-file .env nemesis; else echo "TODO(T5): Dockerfile"; fi
+	@if [ -f Dockerfile ]; then docker run --rm -p 8000:8000 --env-file .env praetor; else echo "TODO(T5): Dockerfile"; fi

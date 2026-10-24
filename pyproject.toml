@@ -1,5 +1,5 @@
 [project]
-name = "nemesis"
+name = "praetor"
 version = "0.1.0"
 description = "Personal security agent: public digital twin, simulated attackers, minimal fixes."
 requires-python = ">=3.11"
